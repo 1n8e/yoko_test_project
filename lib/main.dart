@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<AuthCubit>(create: (_) => getIt<AuthCubit>()),
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         home: AuthScreen(),
       ),
     );

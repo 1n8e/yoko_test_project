@@ -15,6 +15,10 @@ class AuthCubit extends Cubit<AuthState> {
     emit(CheckAuth());
     await datasource.logIn(email, password);
     final access = tokens.get('access');
-    access != null ? emit(SuccessAuth()) : emit(FailureAuth());
+    if (access != null) {
+      emit(SuccessAuth());
+    } else {
+      emit(FailureAuth());
+    }
   }
 }
